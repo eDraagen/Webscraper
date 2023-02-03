@@ -1,0 +1,126 @@
+2021-04-08
+Energy engineer
+Vasquez-Davidson
+Christopherville, AA
+https://realpython.github.io/fake-jobs/jobs/energy-engineer-1.html
+
+2021-04-08
+Software Engineer (Python)
+Garcia PLC
+Ericberg, AE
+https://realpython.github.io/fake-jobs/jobs/software-engineer-python-10.html
+
+2021-04-08
+Materials engineer
+Smith and Sons
+South Davidtown, AP
+https://realpython.github.io/fake-jobs/jobs/materials-engineer-19.html
+
+2021-04-08
+Materials engineer
+Davis, Serrano and Cook
+South Tammyberg, AP
+https://realpython.github.io/fake-jobs/jobs/materials-engineer-24.html
+
+2021-04-08
+Structural engineer
+Pierce-Long
+Herbertside, AA
+https://realpython.github.io/fake-jobs/jobs/structural-engineer-28.html
+
+2021-04-08
+Broadcast engineer
+Morgan, Butler and Bennett
+Loribury, AA
+https://realpython.github.io/fake-jobs/jobs/broadcast-engineer-32.html
+
+2021-04-08
+Engineer, communications
+Dixon Inc
+Wrightberg, AP
+https://realpython.github.io/fake-jobs/jobs/engineer-communications-38.html
+
+2021-04-08
+Engineer, broadcasting (operations)
+Taylor PLC
+Gileston, AA
+https://realpython.github.io/fake-jobs/jobs/engineer-broadcasting-operations-48.html
+
+2021-04-08
+Manufacturing systems engineer
+Garcia PLC
+Joybury, AE
+https://realpython.github.io/fake-jobs/jobs/manufacturing-systems-engineer-51.html
+
+2021-04-08
+Engineer, automotive
+Martinez-Berry
+New Jeffrey, AP
+https://realpython.github.io/fake-jobs/jobs/engineer-automotive-65.html
+
+2021-04-08
+Manufacturing systems engineer
+Stanley-Frederick
+Stevensland, AP
+https://realpython.github.io/fake-jobs/jobs/manufacturing-systems-engineer-86.html
+
+2021-04-08
+Senior Python Developer
+Payne, Roberts and Davis
+Stewartbury, AA
+https://realpython.github.io/fake-jobs/jobs/senior-python-developer-0.html
+
+2021-04-08
+Software Engineer (Python)
+Garcia PLC
+Ericberg, AE
+https://realpython.github.io/fake-jobs/jobs/software-engineer-python-10.html
+
+2021-04-08
+Python Programmer (Entry-Level)
+Moss, Duncan and Allen
+Port Sara, AE
+https://realpython.github.io/fake-jobs/jobs/python-programmer-entry-level-20.html
+
+2021-04-08
+Python Programmer (Entry-Level)
+Cooper and Sons
+West Victor, AE
+https://realpython.github.io/fake-jobs/jobs/python-programmer-entry-level-30.html
+
+2021-04-08
+Software Developer (Python)
+Adams-Brewer
+Brockburgh, AE
+https://realpython.github.io/fake-jobs/jobs/software-developer-python-40.html
+
+2021-04-08
+Python Developer
+Rivera and Sons
+East Michaelfort, AA
+https://realpython.github.io/fake-jobs/jobs/python-developer-50.html
+
+2021-04-08
+Back-End Web Developer (Python, Django)
+Stewart-Alexander
+South Kimberly, AA
+https://realpython.github.io/fake-jobs/jobs/back-end-web-developer-python-django-60.html
+
+2021-04-08
+Back-End Web Developer (Python, Django)
+Jackson, Ali and Mckee
+New Elizabethside, AA
+https://realpython.github.io/fake-jobs/jobs/back-end-web-developer-python-django-70.html
+
+2021-04-08
+Python Programmer (Entry-Level)
+Mathews Inc
+Robertborough, AP
+https://realpython.github.io/fake-jobs/jobs/python-programmer-entry-level-80.html
+
+2021-04-08
+Software Developer (Python)
+Moreno-Rodriguez
+Martinezburgh, AE
+https://realpython.github.io/fake-jobs/jobs/software-developer-python-90.html
+

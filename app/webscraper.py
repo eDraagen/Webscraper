@@ -1,7 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
 
-#// Uncomment this later
+def write_to_file(date, title, company, location, url):
+    file1 = open("scrapeContent.txt", "a")
+    date_line = [f"{date}\n"]
+    title_line = [f"{title}\n"]
+    company_line = [f"{company}\n"]
+    location_line = [f"{location}\n"]
+    url_line = [f"{url}\n"]
+    spacing_line = ["\n"]
+    file1.writelines(date_line)
+    file1.writelines(title_line)
+    file1.writelines(company_line)
+    file1.writelines(location_line)
+    file1.writelines(url_line)
+    file1.writelines(spacing_line)
+    file1.close()
+
+
 search = input(" What jobtitle are you searching for? ").lower()
 
 url = "https://realpython.github.io/fake-jobs/"
@@ -29,10 +45,9 @@ for job_element in job_search_elements:
     company_name = job_element.find("h3", class_="subtitle")
     location = job_element.find("p", class_="location")
     url_link = job_element.find_all("a")[1]["href"]
-    print(date_posted.text.strip())
-    print(title_element.text.strip())
-    print(company_name.text.strip())
-    print(location.text.strip())
-    print(f"Apply here: {url_link}\n")
-    print()
 
+    content_date = date_posted.text.strip()
+    content_title = title_element.text.strip()
+    content_company = company_name.text.strip()
+    content_location = location.text.strip()
+    write_to_file(content_date, content_title, content_company, content_location, url_link)
