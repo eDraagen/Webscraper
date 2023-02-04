@@ -18,5 +18,5 @@ for price in pricing:
     print(price.text.strip())
 
 
-#// Find a smarter way to sort stuff out and to find the stuff more genereal instead of fuckton of spaghetti code\\ anus
+#// Find a smarter way to sort stuff out and to find the stuff more genereal instead of fuckton of spaghetti code\\
 #Do something like take search var, add a for loop to itterate through, and add spesific vars to pick out content i want
