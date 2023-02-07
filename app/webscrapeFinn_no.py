@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 search = input("Type what you are searching")
 
+#//Fix this function so it puts the correct search "format" when sending it to getUrl function. Replace " " with "+"\\
 def searchWord(user_input):
     pass
 
@@ -32,3 +33,4 @@ def getContent(query_url):
         print(f"{link}\n")
         print()
 
+getUrl(search)
