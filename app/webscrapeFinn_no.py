@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-#//Fix this function so it puts the correct search "format" when sending it to getUrl function. Replace " " with "+"\\
+#//Search convert all the whitespaces with + to make the correct search
 def searchWord(user_input):
     f = user_input.replace(" ", "+").lower()
     getUrl(f)
@@ -22,8 +22,10 @@ def getContent(query_url):
     
     resultElements = result.find_all("article", class_="ads__unit")
     articleContent = result.find_all("div", class_="ads__unit__content")
+    #//Shows how many advert found and sleeps program for 3sec
     print("Found ", len(resultElements), " Adverts on current search")
     time.sleep(3)
+
     for content in resultElements:
         title = content.find("h2", class_="ads__unit__content__title").text.strip()
         pricing = content.find("div", class_="ads__unit__img__ratio__price").text.strip()
