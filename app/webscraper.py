@@ -23,8 +23,10 @@ search = input(" What jobtitle are you searching for? ").lower()
 url = "https://realpython.github.io/fake-jobs/"
 page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
+
 #Find everything in "ResultContainer" ID
 result = soup.find(id="ResultsContainer")
+
 #Finds all the <div> tags in the "card_content"
 job_element = result.find_all("div", class_="card-content")
 
@@ -37,7 +39,7 @@ job_search = result.find_all(
 job_search_elements = [
     h2_element.parent.parent.parent for h2_element in job_search
 ]
-#//Will change the var names for more general use, not only python
+
 #parsing through 
 for job_element in job_search_elements:
     date_posted = job_element.find("p", class_="is-small")
