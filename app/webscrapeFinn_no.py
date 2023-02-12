@@ -30,9 +30,12 @@ def getContent(query_url):
         title = content.find("h2", class_="ads__unit__content__title").text.strip()
         pricing = content.find("div", class_="ads__unit__img__ratio__price").text.strip()
         link = content.find_all("a")[0]["href"]
+        id = content.find_all("a")[0]["id"]
+        print(f"ID: {id}\n")
         print(f"{title}")
         print(f"{pricing}")
-        print(f"{link}\n")
+        print(f"{link}")
+
         print()
 
 if __name__ == "__main__":
