@@ -1,6 +1,9 @@
 import requests
+import colorama
 from bs4 import BeautifulSoup
 import time
+
+colorama.init(autoreset=True)
 
 #//Search convert all the whitespaces with + to make the correct search
 def searchWord(user_input):
@@ -31,12 +34,12 @@ def getContent(query_url):
         pricing = content.find("div", class_="ads__unit__img__ratio__price").text.strip()
         link = content.find_all("a")[0]["href"]
         id = content.find_all("a")[0]["id"]
-        print(f"ID: {id}")
+        print(colorama.Fore.RED + f"ID: {colorama.Fore.CYAN + id}")
         print(f"{title}")
-        print(f"{pricing}")
+        print(colorama.Fore.GREEN + f"{pricing}")
         print(f"{link}\n")
         print()
 
 if __name__ == "__main__":
-    search = input("Type what you are searching")
+    search = input("Type what you are searching: ")
     searchWord(search)
