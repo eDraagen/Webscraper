@@ -7,5 +7,4 @@ On windows:
     install module requests: python -m pip install requests
     install module beautifulsoup: python -m pip install beautifulsoup4
 
-Currently having just a input as search spesific job function and find all jobs function in the html.
-Will create a UI with tkinter or any other UI module.
+Modified to scrape Finn.no/torget adverts, taking ID, title, price and html link and store it to a sqlite database.
