@@ -8,19 +8,14 @@ import time
 #// TODO: Create a function that creates a tablet for the query search and insert all the values from that search into the tablet??
 #// TODO: In checIfExists function: If price == "Ønskes kjøpt", want to pass it so it doesnt get added to DB.
 #// TODO: With request and beautifulsoup, also get the content from the advert aswell.
+#// TODO: Get location from content to work correctly.
 
 resultArr = []
 testArr = [["12345", "insane mtb yo", "10000", "www.test1.com"], ["54321", "less insane mtb ", "5000", "www.test2.com"], ["51423", "shit mtb hehe", "3000", "www.worstmtb.com"]]
-
+counter = 0
 db_path = r"C:\Users\einar\Documents\GitHub\Webscraper\databases\pythonSqlite.db"
 conn = sqlite3.connect(db_path)
 curs = conn.cursor()
-
-class sqlCommand:
-    conn = sqlite3.connect(db_path)
-    curs = conn.cursor()
-    commit = conn.commit()
-    close = conn.close()
 
 #//Create sqlite database connection
 def createConnection(path = db_path):
@@ -48,8 +43,8 @@ def checkIfExist(idCheck = resultArr):
             print("ID already exists")
 
 #Writes to sqliteDB
-def writeData(Id, Title, Price, Html):
-    
+def writeData(Id, Title, Price, Html, counter = counter):
+    counter += 1
     conn = sqlite3.connect(db_path)
     curs = conn.cursor()
     curs.execute("INSERT INTO Adverts VALUES (:Id, :Title, :Price, :Html)", {"Id": Id, "Title": Title, "Price": Price, "Html": Html})
@@ -80,14 +75,18 @@ def getContent(query_url):
     time.sleep(3)
     #//Figure out how to append the result into array then import it to sqlite later
     for content in resultElements:
-        #//Location not working 100% yet.
-        # location = content.find("div", class_="ads__unit__content__details").text.strip()
+
+        #//Location not working 100% yet. Need to figure how to only extract 1 div from location class.
+        #location = content.find("div", class_="ads__unit__content__details").text.strip()
+
+
         id = content.find_all("a")[0]["id"]
         title = content.find("h2", class_="ads__unit__content__title")
         pricing = content.find("div", class_="ads__unit__img__ratio__price")
         link = content.find_all("a")[0]["href"]
-        allArray = [id, title.text.strip(), pricing.text.strip(), link]
+        allArray = [id, title.text.strip(), pricing.text.strip(), link ]
         resultArr.append(allArray)
+
     return resultArr
 
 def main():
@@ -95,5 +94,7 @@ def main():
     searchWord(search)
     createConnection()
     checkIfExist()
+    print(f"Added {counter} adverts to DB")
 
-main()
+if __name__ == "__main__":
+    main()
