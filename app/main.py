@@ -4,14 +4,10 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
-#// TODO: Having alot of repeating code here, try to remake with classes specially on the db connection and cursor stuff. Optimize stuff and organize better.
-#// TODO: Create a function that creates a tablet for the query search and insert all the values from that search into the tablet??
 #// TODO: In checIfExists function: If price == "Ønskes kjøpt", want to pass it so it doesnt get added to DB.
-#// TODO: With request and beautifulsoup, also get the content from the advert aswell.
-#// TODO: Get location from content to work correctly.
+#// TODO: With request and beautifulso up, also get the content from the advert aswell.
 
 resultArr = []
-testArr = [["12345", "insane mtb yo", "10000", "www.test1.com"], ["54321", "less insane mtb ", "5000", "www.test2.com"], ["51423", "shit mtb hehe", "3000", "www.worstmtb.com"]]
 counter = 0
 db_path = r"C:\Users\einar\Documents\GitHub\Webscraper\databases\pythonSqlite.db"
 conn = sqlite3.connect(db_path)
@@ -38,20 +34,19 @@ def checkIfExist(idCheck = resultArr):
         print(result)
         if result == 0:
             print("Creating ID")
-            writeData(ele[0], ele[1], ele[2], ele[3])   
+            writeData(ele[0], ele[1], ele[2], ele[3], ele[4])   
         else:
             print("ID already exists")
 
 #Writes to sqliteDB
-def writeData(Id, Title, Price, Html, counter = counter):
+def writeData(Id, Title, Price, Html, Location, counter = counter):
     counter += 1
     conn = sqlite3.connect(db_path)
     curs = conn.cursor()
-    curs.execute("INSERT INTO Adverts VALUES (:Id, :Title, :Price, :Html)", {"Id": Id, "Title": Title, "Price": Price, "Html": Html})
+    curs.execute("INSERT INTO Adverts VALUES (:Id, :Title, :Price, :Html,  :Location)", {"Id": Id, "Title": Title, "Price": Price, "Html": Html, "Location":Location})
     conn.commit()
     conn.close()
 
-    
 #//Search convert all the whitespaces with + to make the correct search
 def searchWord(user_input):
     conv_user_input = user_input.replace(" ", "+").lower()
@@ -75,18 +70,13 @@ def getContent(query_url):
     time.sleep(3)
     #//Figure out how to append the result into array then import it to sqlite later
     for content in resultElements:
-
-        #//Location not working 100% yet. Need to figure how to only extract 1 div from location class.
-        #location = content.find("div", class_="ads__unit__content__details").text.strip()
-
-
         id = content.find_all("a")[0]["id"]
         title = content.find("h2", class_="ads__unit__content__title")
         pricing = content.find("div", class_="ads__unit__img__ratio__price")
         link = content.find_all("a")[0]["href"]
-        allArray = [id, title.text.strip(), pricing.text.strip(), link ]
+        location = content.find("div", class_="ads__unit__content__details").contents[-1].text.strip()
+        allArray = [id, title.text.strip(), pricing.text.strip(), link, location]
         resultArr.append(allArray)
-
     return resultArr
 
 def main():
